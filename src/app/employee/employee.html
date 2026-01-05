@@ -1,0 +1,60 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Employee Name:</label>
+        <input type="text" formControlName="empName">
+
+    </div>
+    <br/>
+    <div>
+        <label>Salary:</label>
+        <input type="number" formControlName="salary">
+
+    </div>
+    <br/>
+    <div>
+        <label>Gender:</label>
+        <select formControlName="gender">
+          
+            <option value="">select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+
+        </select>
+        
+
+    </div>
+    <br/>
+    <div>
+        <label>Location:</label>
+        <input type="text" formControlName="location">
+
+    </div>
+    <br/>
+    <button type="submit">Submit</button>
+
+</form>
+<table *ngIf="empdata.length > 0" border="1">
+  <thead>
+    <tr>
+      <th>Emp ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Gender</th>
+      <th>Location</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of empdata">
+      <td>{{ emp.id }}</td>
+      <td>{{ emp.empName }}</td>
+      <td>{{ emp.salary }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.location }}</td>
+      <td>
+        <button (click)="onEdit(emp)">Edit</button>
+        <button (click)="onDelete(emp.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
