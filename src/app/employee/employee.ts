@@ -80,9 +80,9 @@ onSubmit() {
 }
 
 
-  // ✅ Edit button (you can fill this later)
-  onEdit(obj: any) {
-    this.isEditMode=true;
+  // // ✅ Edit button (you can fill this later)
+  // onEdit(obj: any) {
+  //   this.isEditMode=true;
     this.editEmpId=obj.id;
     this.employeeForm.patchValue({
       empname:obj.empName,
